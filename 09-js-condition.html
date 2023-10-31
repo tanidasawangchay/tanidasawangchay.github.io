@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09 js condition</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ป้อนชื่อสินค้า</th>
+                <th>ป้อนราคาสินค้า</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="text" name="goods" id="goods">
+                </td>
+                <td>
+                    <input type="text" name="price" id="price">
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td align="center"><button type="submit" name="submit" id="submit" onclick="click_submit()">Submit</button></td>
+                <td align="center"><button type="reset" name="reset" id="reset" onclick="click_reset()">Reset</button></td>
+            </tr>
+        </tfoot>
+    </table>
+    <br>
+    <br>
+
+    คำนวณราคาสินค้าที่บวก vat 7%
+    <p name="output" id="output"></p>
+
+    <script>
+
+        
+                function click_submit() {
+
+                    if(
+            document.getElementById('goods').value != '' &&
+            document.getElementById('price').value != '' &&
+            Number(document.getElementById('price').value)
+        ){
+
+                document.getElementById('output').innerHTML =
+
+                document.getElementById('goods').value + ' = ' +
+
+                (Number(document.getElementById('price').value) +
+
+                Number((document.getElementById('price').value * 0.07))).toFixed(2)+
+                ' บาท'
+
+        }
+
+      
+               
+        }
+
+            function click_reset(){
+                document.getElementById('goods').value = ''
+                document.getElementById('price').value = ''
+            }
+
+    </script>
+
+</body>
+</html>
